@@ -8,3 +8,11 @@ Date from a file on the original machine: `june 26 2007`
 * Template Language: rhtml
 * What the hell is this: https://github.com/austenito/ppp/blob/master/app/models/db_helper.rb
 * What's REST?: https://github.com/austenito/ppp/blob/master/app/controllers/ppp_controller.rb
+
+For even more fun, read the comments.
+
+```
+# The action triggered when the ppp application is requested.
+def index
+end
+```
