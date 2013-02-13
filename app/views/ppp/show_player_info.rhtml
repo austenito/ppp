@@ -1,0 +1,106 @@
+
+<h3 id="recordTitle">Player Name:<%= @player.username %></h3>
+<p>
+    <div class="historyBox_time">
+        <h3 id="recordTitle">Timestamp</h3>
+        <% for i in 0..@contestHistories.length - 1 %>
+            <% if i % 2 == 0 %>
+                <p id="firstRecordRow"><%= @contestHistories[i].get_timestamp %></p>
+        <% else %>
+            <p id="secondRecordRow"><%= @contestHistories[i].get_timestamp %></p>
+        <% end %>
+        <% end %>
+    </div>
+
+    <div class="historyBox_opponent">
+        <h3 id="recordTitle">Opponent</h3>
+        <% for i in 0..@contestHistories.length - 1 %>
+            <% for opponent in @contestHistories[i].get_opponents %>
+                <% if i % 2 == 0 %>
+                    <p id="firstRecordRow"><%= opponent.username %></p>
+        <% else %>
+            <p id="secondRecordRow"><%= opponent.username %></p>
+        <% end %>
+        <% end %>
+        <% end %>
+    </div>
+
+    <div class="historyBox_score">
+        <h3 id="recordTitle">Scores</h3>
+        <% for i in 0..@contestHistories.length - 1 %>
+            <% if i % 2 == 0 %>
+                <p id="firstRecordRow">
+                    <% for j in 0..@contestHistories[i].get_games.length - 1 %>
+                        <% @k = 0 %>
+                        <% for score in @contestHistories[i].get_scores(@contestHistories[i].get_games[j]) %>
+                            <%= score.score %>
+                            <% if @k == 0 %>
+                                -
+                            <% end %>
+                            <% @k += 1 %>
+                        <% end %>
+
+                        <% if j != @contestHistories[i].get_games.length - 1 %>
+                            ,
+                        <% end %>
+                        <% j += 1 %>
+                    <% end %>
+                </p>
+        <% else %>
+            <p id="secondRecordRow">
+                <% for j in 0..@contestHistories[i].get_games.length - 1 %>
+                    <% @k = 0 %>
+                    <% for score in @contestHistories[i].get_scores(@contestHistories[i].get_games[j]) %>
+                        <%= score.score %>
+                        <% if @k == 0 %>
+                            -
+                        <% end %>
+                        <% @k += 1 %>
+                    <% end %>
+
+                    <% if j != @contestHistories[i].get_games.length - 1 %>
+                        ,
+                    <% end %>
+                    <% j += 1 %>
+                <% end %>
+              <% end %>
+        <% end %>
+    </div>
+
+    <div class="historyBox_rating">
+        <h3 id="recordTitle">Ratings</h3>
+        <% @ratings = Rating.get_all_ratings(@player) %>
+        <% @previous_rating = @ratings[0].rating.to_i %>
+        <% for i in 1 .. @ratings.length - 1 %>
+            <% @current_rating = @ratings[i].rating.to_i - @previous_rating  %>
+            <% if (i-1) % 2 == 0 %>
+            <p id="firstRecordRow"><%= @ratings[i].rating.to_i %>&nbsp(<%= @current_rating %>)</p>
+            <% else %>
+             <p id="secondRecordRow"><%= @ratings[i].rating.to_i %>&nbsp(<%= @current_rating %>)</p>
+            <% end %>
+             <% @previous_rating = @ratings[i].rating.to_i%>
+        <% end %>
+    </div>
+    
+    <div class="historyBox_actions">
+            <h3 id="blankRecordTitle">&nbsp</h3>
+        <% for i in 0 .. @contestHistories.length - 1 %>
+            <% if i % 2 == 0 %>
+             <p id="firstRecordRow">[<%= link_to "Edit", :action => "edit_match", 
+             :contest => @contestHistories[i].contest %>]
+             [<%= link_to "Remove", {:action => "remove_match", 
+             :contest => @contestHistories[i].contest, :player_name => @player.username},
+             :confirm => 'Are you sure? Deletions cannot be undone.', :method => :post %>]
+             </p>
+            <% else %>
+             <p id="secondRecordRow">[<%= link_to "Edit", :action => "edit_match", 
+             :contest => @contestHistories[i].contest %>]
+             [<%= link_to "Remove", {:action => "remove_match", 
+             :contest => @contestHistories[i].contest, :player_name => @player.username},
+             :confirm => 'Are you sure? Deletions cannot be undone.', :method => :post%>]
+             </p>
+            <% end %>
+        <% end %>
+    </div>
+</p>
+

@@ -1,0 +1,232 @@
+body {
+	
+}
+/* Global styles */
+/* START:notice */
+#notice {
+  border: 2px solid red;
+  padding: 1em;
+  margin-bottom: 2em;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
+}
+/* END:notice */
+
+/* Styles for main page */
+#banner {
+  background: #9c9;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 30px/30px "Helvetica", serif;
+  color: #282;
+  text-align: center;
+}
+
+#banner img {
+  float: left;
+}
+
+#main {
+  margin-left: 15em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 500px;
+  width: 14em;
+  background: #141;
+  font: small-caps 18px/18px "Helvetica", serif;
+}
+
+#side a {
+  color: #bfb;
+  font-size: small;
+}
+
+h1 {
+  font:  150% sans-serif;
+  color: #226;
+  border-bottom: 3px dotted #77d;
+}
+
+
+/* Styles for order form */
+
+.depot-form fieldset {
+  background: #efe;
+}
+
+.depot-form legend {
+  color: #dfd;
+  background: #141;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.depot-form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  margin-right: 0.5em;
+  display: block;
+}
+
+.depot-form .submit {
+  margin-left: 5.5em;
+}
+
+/* The error box */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+/** Add Match Page Styles. */
+div.title{
+  padding: 0px 10px 0px 0px;
+}
+
+div.playerChooser {
+  float: left;
+  padding: 0px 10px 0px 5px;
+}
+
+div.scoreBox {
+  padding: 0px 5px 0px 5px;
+}
+
+/** Listing Styles. */
+div.recordBox {
+	float: left;
+}
+
+#recordTitle{
+	font-family: Helvetica, sans-serif;
+	text-decoration: underline;
+	padding: 0px 50px 0px 10px;
+	margin: 0px 50px 5px 0px;	
+}
+
+#blankRecordTitle{
+	font-family: Helvetica, sans-serif;
+	padding: 0px 50px 0px 10px;
+	margin: 0px 50px 5px 0px;	
+}
+
+#firstRecordRow{
+	font-family: Helvetica, sans-serif;
+	font-size: 10pt;
+	padding : 0px 0px 5px 10px;
+	margin: 0px; 
+	background-color: #FCF6CF;
+}
+
+#secondRecordRow{
+    font-family: Helvetica, sans-serif;
+	font-size: 10pt;
+	padding : 0px 0px 5px 10px;
+    margin: 0px;
+	background-color: #8fbc8f;
+}
+
+/** Match history styles. */
+div.historyBox_time {
+	position: absolute;
+	left: 315px;
+}
+
+div.historyBox_opponent{
+	position: absolute;
+	left: 525px;
+}
+
+div.historyBox_score{
+	position: absolute;
+	left: 715px;
+}
+
+div.historyBox_rating{
+	position: absolute;	
+	left: 875px;
+}
+
+div.historyBox_actions{
+	position: absolute;
+	left: 955px;
+	
+}
+
+/** Adding player styles. */
+div.addPlayer{
+    padding : 0px 0px 5px 10px;	
+    font-family: Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+/** Add match styles. */
+div.add1GameMatch{
+    padding : 0px 0px 5px 10px;	
+    font-family: Helvetica, sans-serif;
+	font-size: 10pt;
+}
+
+div.add3GameMatch{
+    padding : 0px 0px 5px 10px;	
+    font-family: Helvetica, sans-serif;
+	font-size: 10pt;	
+}
+
+/** Link styles. */
+a:link { 
+	color: #000000;
+	text-decoration: none;
+}
+a:visited{ 
+	color: #000000;
+	text-decoration: none;
+}
+a:hover { 
+	text-decoration: underline;
+}
+a:active { 
+	color: #333333;
+}

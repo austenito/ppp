@@ -1,0 +1,22 @@
+<div class="add3GameMatch">
+<% form_for :match, :url => {:action => :create_3game_match } do |form| %>
+    <div class="title">Winner:</div>
+    <p>
+        <div class="playerChooser"><%= form.select :winner, @players %></div>
+        <div class="scores"><%= form.text_field :winner_score1, :size => 3 %>
+        <%= form.text_field :winner_score2, :size => 3 %>
+        <%= form.text_field :winner_score3, :size => 3 %></div>
+    </p>
+
+    <p>
+        <div class="title">Loser:</div>
+    </p>
+    <p>
+        <div class="playerChooser"><%= form.select :loser, @players %></div>
+        <div class="scores"><%= form.text_field :loser_score1, :size => 3 %>
+        <%= form.text_field :loser_score2, :size => 3 %>
+        <%= form.text_field :loser_score3, :size => 3 %></div>
+    </p>
+    <p><%= submit_tag %></p>
+<% end %>
+</div>

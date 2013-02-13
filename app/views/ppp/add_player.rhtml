@@ -1,0 +1,6 @@
+<div class="addPlayer">
+<% form_for :player, :url => {:action => :create_player} do |form| %>
+    <p>Username:&nbsp;&nbsp;<%= form.text_field :username, :size => 30 %></p>
+    <p><%= submit_tag %></p>
+<% end %>
+</div>

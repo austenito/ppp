@@ -1,0 +1,36 @@
+
+<div class="recordBox">
+    <h3 id="recordTitle">Player</h3>
+    <% for i in 0..@players.length - 1 %>
+        <% if i % 2 == 0 %>
+            <p id="firstRecordRow"><%= link_to @players[i].username, :action => "show_player_info" , :username => @players[i].username %></p>
+    <% else %>
+        <p id="secondRecordRow"><%= link_to @players[i].username, :action => "show_player_info" , :username => @players[i].username %></p>
+    <% end %>
+    <% end %>
+</div>
+
+<div class="recordBox">
+    <h3 id="recordTitle">Record</h3>
+    <% for i in 0..@players.length - 1 %>
+        <% @players[i].records.each do |record| %>
+          <% if i % 2 == 0 %>
+            <p id="firstRecordRow"><%= record.wins %>-<%= record.losses %></p>
+          <% else %>
+            <p id="secondRecordRow"><%= record.wins %>-<%= record.losses %></p>
+          <% end %>
+        <% end %>
+    <% end %>
+</div>
+
+<div class="recordBox">
+    <h3 id="recordTitle">Rating</h3>
+    <% for i in 0..@players.length - 1 %>
+    <% if i % 2 == 0 %>
+        <p id="firstRecordRow"><%= Rating.get_latest_rating(@players[i]).rating.to_i %></p>
+    <% else %>
+        <p id="secondRecordRow"><%= Rating.get_latest_rating(@players[i]).rating.to_i %></p>
+    <% end %>
+    <% end %>
+</div>
+

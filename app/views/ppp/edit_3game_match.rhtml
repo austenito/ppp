@@ -1,0 +1,24 @@
+<div class="add3GameMatch">
+<% form_tag :action => :save_3game_edit, :contest => @contest, :id => @post do %>
+<div class="title">Winner:</div>
+<div class="playerChooser"><%= select "winner", "username", @players %></div>
+<div class="scores">
+<%= text_field "winner_score1",  "score", "size" => 3 %>
+<%= text_field "winner_score2",  "score", "size" => 3 %>
+<%= text_field "winner_score3",  "score", "size" => 3 %>
+</div>
+<p>
+<div class="title">Loser:</div>
+<div class="playerChooser"><%= select "loser", "username", @players %></div>
+<div class="scores">
+<%= text_field "loser_score1",  "score", "size" => 3 %>
+<%= text_field "loser_score2",  "score", "size" => 3 %>
+<%= text_field "loser_score3",  "score", "size" => 3 %>
+</div>
+<p>
+<%= button_to "Edit Match" %>
+<p>
+Note that editing make take up to 1 minute to complete because each rating must be recalculated.
+<% end %>
+</div>
+

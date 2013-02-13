@@ -1,0 +1,26 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ ! Excerpted from "Agile Web Development with Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.pragmaticprogrammer.com/titles/rails2 for more book information.
+-->
+<html>
+    <head>
+        <title>Play Ping Pong</title><%= stylesheet_link_tag "ppp", :media => "all" %>
+    </head>
+    <body id="store">
+        <div id="banner"><%= @page_title || "Play Ping Pong!" %></div>
+            <div id="side"><%= link_to "Add Player", :action => :add_player %>
+                <br><%= link_to "View Players", :action => :view_players %>
+                <br><%= link_to "Add 1-Game Match", :action => :add_1game_match %>
+                <br><%= link_to "Add 3-Game Match", :action => :add_3game_match %>
+            </div>
+            <div id="main">
+                <% if flash[:notice] -%>
+                    <div id="notice"><%= flash[:notice] %></div>
+                <% end %><%= yield :layout %>
+            </div>
+    </body>
+</html>
